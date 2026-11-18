@@ -8,7 +8,7 @@ Guarda referencias de diseño de cualquier web (Instagram, YouTube, Pinterest, B
 
 ## Privacidad
 
-Refs no tiene servidores, cuentas ni estadísticas de uso. Lo que guardas (enlaces, notas y miniaturas) se queda en una carpeta de tu ordenador y no se envía a ningún sitio. La extensión solo lee la página que estás guardando, cuando tú lo pides. Las vistas previas de YouTube y Vimeo se reproducen desde esas webs, como cualquier vídeo incrustado.
+Refs no tiene servidores, cuentas ni estadísticas de uso. Lo que guardas (enlaces, notas y miniaturas) se queda en una carpeta de tu ordenador y no se envía a ningún sitio. La extensión solo lee la página que estás guardando, cuando tú lo pides. Las vistas previas de YouTube y Vimeo se reproducen desde esas webs, como cualquier vídeo incrustado. Para avisarte de las versiones nuevas, la app consulta esta página de GitHub al abrirse y una vez al día, sin enviar nada sobre ti; puedes desactivarlo en **Ajustes**.
 
 ## Instalar Refs
 
@@ -49,11 +49,13 @@ Si el popup dice que no encuentra la app, abre Refs, ve a **Ajustes** y pulsa **
 - **Colecciones:** arrastra una referencia a una colección, o selecciónala y pulsa `M`.
 - **Buscar:** la barra de arriba busca por nombre, nota o enlace. El menú de la derecha filtra por la plataforma de origen.
 - **Atajos:** `Ctrl+F` buscar · `M` mover a una colección · `R` marcar como revisada · `Supr` enviar a la papelera · doble clic para abrir el original.
-- **Ajustes:** tema (claro, oscuro o el de Windows), arrancar con Windows, la papelera y la carpeta donde están tus referencias.
+- **Ajustes:** tema (claro, oscuro o el de Windows), arrancar con Windows, la papelera, la carpeta donde están tus referencias y buscar actualizaciones.
 
 ## Actualizar
 
-Descarga el instalador de la versión nueva y ábrelo: sustituye a la anterior y conserva tus referencias. Si la versión nueva trae extensión nueva, descomprímela en la misma carpeta (sustituyendo los archivos) y pulsa el botón de recargar de Refs en la página de extensiones.
+Cuando haya una versión nueva, Refs te lo dirá con un aviso arriba de la ventana. Pulsa **Descargar**, baja el instalador nuevo y ábrelo: sustituye a la versión anterior y conserva tus referencias. También puedes comprobarlo en **Ajustes → Buscar actualizaciones**.
+
+Si la versión nueva trae también extensión nueva (lo dice su página en [Releases](../../releases/latest)), descomprímela en la misma carpeta, sustituyendo los archivos, y pulsa el botón de recargar de Refs en la página de extensiones del navegador.
 
 ## Desinstalar
 
