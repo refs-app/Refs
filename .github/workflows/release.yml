@@ -1,0 +1,69 @@
+# Builds Refs from its private source repository and publishes the Windows
+# installer and the extension zip as a release of this public repository.
+#
+# Runs when a version tag (v0.1.1, v0.2.0…) is pushed here; the source is
+# checked out at the tag of the same name. Two repository secrets:
+#   SOURCE_REPO   owner/name of the private source repository
+#   SOURCE_TOKEN  fine-grained token with read-only Contents on that repository
+# Both are masked in the (public) logs. The release itself is created with
+# this repository's own token, so it is published by github-actions.
+
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SOURCE_REPO }}
+          token: ${{ secrets.SOURCE_TOKEN }}
+          ref: ${{ github.ref_name }}
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.18.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - run: pnpm install --frozen-lockfile
+
+      # The same checks as during development, before anything is published.
+      - run: pnpm typecheck
+      # The app embeds the built frontend, so it must exist before Rust compiles.
+      - run: pnpm build
+      - run: cargo test --workspace
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+
+      # Installer with refs-host inside: target/release/bundle/nsis/Refs_<version>_x64-setup.exe
+      - run: pnpm release:app
+      # target/release/bundle/Refs-extension-<version>.zip
+      - run: pnpm release:extension
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Refs ${{ github.ref_name }}
+          body: |
+            **Para instalar Refs, sigue los pasos del [README](https://github.com/${{ github.repository }}#instalar-refs).**
+
+            - `Refs_…_x64-setup.exe`: la app para Windows 10 y 11.
+            - `Refs-extension-….zip`: la extensión para Brave, Chrome, Edge y otros navegadores basados en Chromium.
+          files: |
+            target/release/bundle/nsis/*-setup.exe
+            target/release/bundle/Refs-extension-*.zip
+          fail_on_unmatched_files: true
