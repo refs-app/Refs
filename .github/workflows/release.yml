@@ -1,8 +1,10 @@
 # Builds Refs from its private source repository and publishes the Windows
 # installer and the extension zip as a release of this public repository.
 #
-# Runs when a version tag (v0.1.1, v0.2.0…) is pushed here; the source is
-# checked out at the tag of the same name. Two repository secrets:
+# Runs when a version tag (v0.1.2, v0.2.0…) is pushed here; the source is
+# checked out at the tag of the same name. It can also be started by hand
+# (Actions → Release → Run workflow) with the tag to build, for example when a
+# tag push did not start it. Two repository secrets:
 #   SOURCE_REPO   owner/name of the private source repository
 #   SOURCE_TOKEN  fine-grained token with read-only Contents on that repository
 # Both are masked in the (public) logs. The release itself is created with
@@ -13,6 +15,11 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Versión a publicar (por ejemplo v0.1.2)"
+        required: true
 
 permissions:
   contents: write
@@ -25,7 +32,7 @@ jobs:
         with:
           repository: ${{ secrets.SOURCE_REPO }}
           token: ${{ secrets.SOURCE_TOKEN }}
-          ref: ${{ github.ref_name }}
+          ref: ${{ inputs.tag || github.ref_name }}
           persist-credentials: false
 
       - uses: pnpm/action-setup@v4
@@ -57,7 +64,8 @@ jobs:
 
       - uses: softprops/action-gh-release@v2
         with:
-          name: Refs ${{ github.ref_name }}
+          tag_name: ${{ inputs.tag || github.ref_name }}
+          name: Refs ${{ inputs.tag || github.ref_name }}
           body: |
             **Para instalar Refs, sigue los pasos del [README](https://github.com/${{ github.repository }}#instalar-refs).**
 
