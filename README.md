@@ -1,68 +1,69 @@
 # Refs
 
-Guarda referencias de diseño de cualquier web (Instagram, YouTube, Pinterest, Behance, Dribbble, TikTok, X, Vimeo…) con un clic desde el navegador, y organízalas en colecciones en una app de escritorio.
+Save design references from any website (Instagram, YouTube, Pinterest, Behance, Dribbble, TikTok, X, Vimeo…) in one click from your browser, and organise them into collections in a desktop app.
 
-- Todo se guarda **en tu ordenador**: no hay cuentas ni nube.
-- Funciona con **Windows 10 y 11** y con navegadores basados en Chromium: **Brave, Chrome, Edge, Opera, Arc**.
-- No descarga vídeos: guarda el enlace y una miniatura. Los de YouTube y Vimeo se reproducen al pasar el ratón.
+- Everything is kept **on your computer**: no accounts, no cloud.
+- Works on **Windows 10 and 11** with Chromium-based browsers: **Brave, Chrome, Edge, Opera, Arc**.
+- It never downloads videos: it keeps the link and a thumbnail. YouTube and Vimeo videos play when you hover over them.
 
-## Privacidad
+## Privacy
 
-Refs no tiene servidores, cuentas ni estadísticas de uso. Lo que guardas (enlaces, notas y miniaturas) se queda en una carpeta de tu ordenador y no se envía a ningún sitio. La extensión solo lee la página que estás guardando, cuando tú lo pides. Las vistas previas de YouTube y Vimeo se reproducen desde esas webs, como cualquier vídeo incrustado. Para avisarte de las versiones nuevas, la app consulta esta página de GitHub al abrirse y una vez al día, sin enviar nada sobre ti; puedes desactivarlo en **Ajustes**.
+Refs has no servers, accounts or usage statistics. What you save (links, notes and thumbnails) stays in a folder on your computer and is not sent anywhere. The extension only reads the page you are saving, when you ask it to. YouTube and Vimeo previews play from those sites, like any embedded video. To tell you about new versions, the app checks this GitHub page when it opens and once a day, without sending anything about you; you can turn this off in **Settings**.
 
-## Instalar Refs
+## Install Refs
 
-Son dos piezas: la **app** y la **extensión** del navegador. Las dos se descargan de la página [Releases](../../releases/latest).
+There are two parts: the **app** and the browser **extension**. Both are downloaded from the [Releases](../../releases/latest) page.
 
-### 1. La app
+### 1. The app
 
-1. En [Releases](../../releases/latest), descarga **`Refs_…_x64-setup.exe`**.
-2. Ábrelo. Como la app no tiene firma digital, Windows puede mostrar un aviso azul («Windows protegió su PC»). Pulsa **Más información** y luego **Ejecutar de todas formas**.
-3. Sigue el instalador. No pide permisos de administrador.
-4. Abre **Refs** desde el menú Inicio. Tiene que estar abierta al menos una vez para que la extensión la encuentre.
+1. In [Releases](../../releases/latest), download **`Refs_…_x64-setup.exe`**.
+2. Open it. As the app has no digital signature, Windows may show a blue warning ("Windows protected your PC"). Click **More info** and then **Run anyway**.
+3. Follow the installer. It does not ask for administrator rights.
+4. Open **Refs** from the Start menu. It has to be opened at least once for the extension to find it.
 
-### 2. La extensión
+### 2. The extension
 
-1. En [Releases](../../releases/latest), descarga **`Refs-extension-….zip`**.
-2. Descomprímelo en una carpeta que no vayas a borrar, por ejemplo `Documentos\Refs-extension`. El navegador la carga desde ahí cada vez que arranca.
-3. En la barra de direcciones del navegador, escribe:
+1. In [Releases](../../releases/latest), download **`Refs-extension-….zip`**.
+2. Unzip it into a folder you will keep, for example `Documents\Refs-extension`. The browser loads it from there every time it starts.
+3. In the browser's address bar, type:
    - Brave: `brave://extensions`
    - Chrome: `chrome://extensions`
    - Edge: `edge://extensions`
-4. Activa el **Modo de desarrollador** (interruptor arriba a la derecha; en Edge está a la izquierda).
-5. Pulsa **Cargar descomprimida** y elige la carpeta del paso 2: la que contiene `manifest.json`.
-6. Fija la extensión: pulsa el icono de puzle de la barra del navegador y luego la chincheta junto a **Refs**.
+4. Turn on **Developer mode** (top right; in Edge it is on the left).
+5. Click **Load unpacked** and choose the folder from step 2: the one that contains `manifest.json`.
+6. Pin the extension: click the puzzle icon in the browser's toolbar, then the pin next to **Refs**.
 
-### Comprobar que funciona
+### Check that it works
 
-1. Abre cualquier post, por ejemplo de Instagram o Behance.
-2. Pulsa el icono de Refs en la barra del navegador. Arriba del popup debe salir un punto verde y «Conectado con Refs».
-3. Pulsa **Guardar**. La referencia aparece en la app, en **Por revisar**.
+1. Open any post, for example on Instagram or Behance.
+2. Click the Refs icon in the browser's toolbar. At the top of the popup you should see a green dot and "Connected to Refs".
+3. Click **Save**. The reference appears in the app, in **Review**.
 
-También puedes hacer clic derecho sobre una página, un enlace o una imagen y elegir **Guardar en Refs**.
+You can also right-click a page, a link or an image and choose **Save to Refs**.
 
-Si el popup dice que no encuentra la app, abre Refs, ve a **Ajustes** y pulsa **Reparar conexión**.
+If the popup says it cannot find the app, open Refs, go to **Settings** and click **Repair connection**.
 
-## Usar Refs
+## Using Refs
 
-- **Por revisar:** todo lo que guardas entra aquí hasta que lo metes en una colección.
-- **Colecciones:** arrastra una referencia a una colección, o selecciónala y pulsa `M`.
-- **Buscar:** la barra de arriba busca por nombre, nota o enlace. El menú de la derecha filtra por la plataforma de origen.
-- **Atajos:** `Ctrl+F` buscar · `M` mover a una colección · `R` marcar como revisada · `Supr` enviar a la papelera · doble clic para abrir el original.
-- **Ajustes:** tema (claro, oscuro o el de Windows), arrancar con Windows, la papelera, la carpeta donde están tus referencias y buscar actualizaciones.
+- **Review:** everything you save lands here until you put it in a collection.
+- **Collections:** drag a reference onto a collection, or select it and press `M`. Each collection has a name, a description and a folder colour.
+- **Pinned:** pin the collections you use most to the sidebar. **New Folder** creates a pinned collection.
+- **Filter by platform:** the menu at the top right shows only the platforms you have saved from, with how many references each one has.
+- **Shortcuts:** `M` move to a collection · `R` mark as reviewed · `Delete` move to the trash · double click to open the original.
+- **Settings:** theme (light, dark or the Windows one), start with Windows, the trash, the folder where your references are, and checking for updates.
 
-## Actualizar
+## Updating
 
-Cuando haya una versión nueva, Refs te lo dirá con un aviso arriba de la ventana. Pulsa **Descargar**, baja el instalador nuevo y ábrelo: sustituye a la versión anterior y conserva tus referencias. También puedes comprobarlo en **Ajustes → Buscar actualizaciones**.
+When there is a new version, Refs tells you with a notice at the top of the window. Click **Download**, get the new installer and open it: it replaces the previous version and keeps your references. You can also check in **Settings → Check for updates**.
 
-Si la versión nueva trae también extensión nueva (lo dice su página en [Releases](../../releases/latest)), descomprímela en la misma carpeta, sustituyendo los archivos, y pulsa el botón de recargar de Refs en la página de extensiones del navegador.
+If the new version also brings a new extension (its page in [Releases](../../releases/latest) says so), unzip it into the same folder, replacing the files, and click the reload button of Refs on the browser's extensions page.
 
-## Desinstalar
+## Uninstalling
 
-Desde **Configuración de Windows → Aplicaciones → Aplicaciones instaladas → Refs → Desinstalar**. El desinstalador ofrece una casilla para borrar los datos de la aplicación: **si la marcas, se borran también todas tus referencias**. Sin marcarla, quedan en `%APPDATA%\com.refs.desktop`.
+Go to **Windows Settings → Apps → Installed apps → Refs → Uninstall**. The uninstaller offers a box to delete the app's data: **if you tick it, all your references are deleted too**. If you leave it unticked, they stay in `%APPDATA%\com.refs.desktop`.
 
-La extensión se quita desde la página de extensiones del navegador.
+Remove the extension from the browser's extensions page.
 
-## Licencia
+## License
 
-Refs es gratuito para uso personal. El código y el diseño son del autor: no se pueden copiar, modificar ni redistribuir sin permiso. Se ofrece tal cual, sin garantía. Detalles en [`LICENSE`](LICENSE).
+Refs is free for personal use. The code and design belong to the author: they may not be copied, modified or redistributed without permission. It is provided as is, without warranty. Details in [`LICENSE`](LICENSE).

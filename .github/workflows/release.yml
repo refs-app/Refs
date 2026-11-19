@@ -67,10 +67,10 @@ jobs:
           tag_name: ${{ inputs.tag || github.ref_name }}
           name: Refs ${{ inputs.tag || github.ref_name }}
           body: |
-            **Para instalar Refs, sigue los pasos del [README](https://github.com/${{ github.repository }}#instalar-refs).**
+            **To install Refs, follow the steps in the [README](https://github.com/${{ github.repository }}#install-refs).**
 
-            - `Refs_…_x64-setup.exe`: la app para Windows 10 y 11.
-            - `Refs-extension-….zip`: la extensión para Brave, Chrome, Edge y otros navegadores basados en Chromium.
+            - `Refs_…_x64-setup.exe`: the app for Windows 10 and 11.
+            - `Refs-extension-….zip`: the extension for Brave, Chrome, Edge and other Chromium-based browsers.
           files: |
             target/release/bundle/nsis/*-setup.exe
             target/release/bundle/Refs-extension-*.zip
