@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Versión a publicar (por ejemplo v0.1.2)"
+        description: "Version to publish (for example v0.1.5)"
         required: true
 
 permissions:
